@@ -1,0 +1,55 @@
+.work-profile-pic {
+	width: 350px;
+	height: auto;
+	max-height: 400px;
+	border-radius: 30px;
+	object-fit: cover;
+	margin-right: 1%;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.my-name {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: 0px;
+}
+.name {
+	background: linear-gradient(45deg, #8b0000 0%, #ff4500 50%, #ffd700 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: bold;
+	font-size: 3rem;
+}
+.intro-text-image {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+	border-radius: 8px;
+	background-color: #1d1a1a;
+	width: 90%;
+}
+.intro-section {
+	display: flex;
+	justify-content: center;
+}
+.my-profession {
+	font-size: 23px;
+	font-weight: bold;
+	margin-top: 3px;
+	margin-bottom: 0px;
+}
+.my-bio {
+	font-size: 18px;
+	line-height: 20px;
+	font-style: italic;
+	margin-top: 10px;
+}
+.intro-text {
+	margin-left: 1%;
+	margin-top: 40px;
+}
+.bio-text {
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
