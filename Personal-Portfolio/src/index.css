@@ -1,7 +1,42 @@
-body {
-	font-family: Arial;
-	margin-top: 0px;
-	margin-bottom: 0px;
-  background-color: black;
-  color: white;
+@import 'tailwindcss';
+
+@theme {
+	--font-arial: Arial, sans-serif;
+	--background-image-dim-gold: radial-gradient(
+		circle at bottom right,
+		rgba(255, 215, 0, 0.15) 0%,
+		rgba(255, 69, 0, 0.1) 40%,
+		transparent 75%
+	);
+	--background-image-gold-gradient: linear-gradient(
+		45deg,
+		#8b0000 0%,
+		#ff4500 50%,
+		#ffd700 100%
+	);
+
+	--bg-section-divider: linear-gradient(
+		90deg,
+		rgba(139, 0, 0, 0) 0%,
+		/* Fade in from black */ #8b0000 20%,
+		/* Your Dark Red */ #ff4500 50%,
+		/* Your Orange */ #ffd700 80%,
+		/* Your Gold */ rgba(255, 215, 0, 0) 100% /* Fade out to black */
+	);
+	--shadow-gold: 0px 4px 8px rgba(255, 69, 0, 0.4);
+}
+@layer base {
+	::-webkit-scrollbar {
+		display: none;
+	}
+
+	html {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+}
+@layer utilities {
+	.list-square {
+		list-style-type: square;
+	}
 }
