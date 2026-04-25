@@ -71,7 +71,6 @@
 	animation: twinkle 5s infinite alternate;
 }
 
-/* white stars */
 .stars {
 	background-image:
 		radial-gradient(circle at center, #ffffff 1px, transparent 1px),

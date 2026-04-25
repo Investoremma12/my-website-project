@@ -73,7 +73,7 @@ const SectionDivider = () => {
 	return (
 		<div className="relative w-full h-px flex justify-center items-center my-10 lg:hidden">
 			{/* The main fading line */}
-			<div className="absolute w-full h-px bg-[image:var(--bg-section-divider)]" />
+			<div className="absolute w-full h-px bg-(image:--bg-section-divider)" />
 
 			{/* A small central glow "dot" to signify the break */}
 			<div className="absolute w-24 h-8 bg-yellow-500/20 blur-xl rounded-full" />

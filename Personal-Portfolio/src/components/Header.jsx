@@ -20,7 +20,7 @@ export function Header() {
 							key={item}
 							className="hover:bg-zinc-900 p-1 rounded-md cursor-pointer transition-colors"
 							whileHover={{ scale: 1.02 }}
-							transition={{ ease: "easeIn" }}
+							transition={{ ease: 'easeIn' }}
 						>
 							{item}
 						</motion.p>
@@ -29,8 +29,9 @@ export function Header() {
 				<div className="hidden lg:block bg-gold-gradient border-none px-2 py-1 font-bold  rounded-lg cursor-pointer transition-colors shadow-gold text-lg">
 					contact Me
 				</div>
+
 				<button
-					className={`fixed top-4 right-4 z-999 flex items-center cursor-pointer justify-center w-12 h-12 rounded-full transition-all duration-300 outline-none border-none lg:hidden
+					className={`top-4 right-4 z-999 flex items-center cursor-pointer justify-center w-12 h-12 rounded-full transition-all duration-300 outline-none border-none lg:hidden
         ${isOpen ? 'bg-black shadow-lg' : 'bg-transparent hover:bg-zinc-900'}`}
 					onClick={() => setIsOpen(!isOpen)}
 				>
@@ -81,7 +82,7 @@ export function Header() {
 							className="bg-[#161616] w-full rounded-sm z-100 fixed text-white right-0 bottom-0 top-1 lg:hidden md:w-[50%]"
 						>
 							<div className="space-y-5 mt-15 mb-20 ml-5">
-								{['HOME', 'SERVICES', 'ABOUT',  'PROJECTS'].map((item) => (
+								{['HOME', 'SERVICES', 'ABOUT', 'PROJECTS'].map((item) => (
 									<p
 										key={item}
 										className="cursor-pointer text-[40px] font-black text-[#cecbcb] hover:text-white active:text-white transition-colors w-fit"
@@ -91,7 +92,10 @@ export function Header() {
 								))}
 							</div>
 
-							<motion.div drag className="bg-gold-gradient mx-auto  border-none px-3 py-1 font-bold w-fit rounded-lg cursor-pointer  shadow-gold text-lg ">
+							<motion.div
+								drag
+								className="bg-gold-gradient mx-auto  border-none px-3 py-1 font-bold w-fit rounded-lg cursor-pointer  shadow-gold text-lg "
+							>
 								contact Me
 							</motion.div>
 						</motion.div>

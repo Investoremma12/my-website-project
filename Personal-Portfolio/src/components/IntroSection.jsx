@@ -40,28 +40,30 @@ export function IntroSection() {
 	return (
 		<>
 			<motion.section
-				className="mx-12"
+				// className="mx-12"
 				initial={{ opacity: 0, x: -100 }}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ duration: 0.8 }}
 			>
-				<div className="flex flex-col md:flex-row mt-10 gap-3 mx-auto bg-[#1d1a1a] w-[93%] p-5 rounded-sm">
-					<div className="mt-7 order-2 md:order-1">
-						<p className="text-[1.2rem] lg:text-[1.5rem] font-bold">
+				<div className="flex flex-col lg:flex-row mt-10 gap-3 mx-auto bg-[#1d1a1a] w-[95%] lg:w-[93%] p-5 rounded-sm">
+					<div className="lg:mt-7 order-2 lg:order-1">
+						<p className="text-[1.2rem] sm:text-[1.3rem] lg:text-[1.5rem] font-bold text-center lg:text-left">
 							Hi! i am
-							<span className="bg-gold-gradient bg-clip-text text-transparent text-[1.6rem] lg:text-3xl ml-1">
+							<span className="bg-gold-gradient bg-clip-text text-transparent text-[1.4rem] sm:text-[1.6rem] lg:text-3xl ml-1">
 								Emmanuel Onyibe
 							</span>
 						</p>
-						<p className="text-xl lg:text-2xl font-bold">A web developer</p>
+						<p className="text-xl lg:text-2xl font-bold text-center lg:text-left">
+							A web developer
+						</p>
 						<div className="mt-3 max-w-4xl">
-							<p className="text-xl italic hidden sm:block md:block">
+							<p className="text-xl italic hidden sm:block md:block text-center lg:text-left">
 								I specialize in building bespoke, high-performance web
 								solutions. From sleek landing pages to complex platforms, I
 								combine expert technical skill with modern design to bring any
 								digital vision to life.
 							</p>
-							<p className="text-xl italic sm:hidden md:hidden">
+							<p className="text-lg italic sm:hidden md:hidden text-center lg:text-left">
 								I craft high-performance digital solutions, combining modern
 								design with expert technical skill to bring bespoke web visions
 								to life.
@@ -71,11 +73,11 @@ export function IntroSection() {
 							contact Me
 						</div> */}
 					</div>
-					<div className="flex justify-center items-center  md:order-2">
-						<div className="p-1.25 rounded-full w-fit bg-gold-gradient sm:rounded-4xl  md:bg-none ">
+					<div className="flex justify-center items-center  lg:order-2">
+						<div className="relative p-0.5 rounded-full sm:rounded-4xl  bg-gold-gradient shadow-[0_0_30px_rgba(217,180,108,0.3)] w-fit lg:shadow-none lg:bg-none">
 							<img
 								src={workPic}
-								className={`w-50 h-50 rounded-full object-cover border-4  border-[#1d1a1a] sm:w-60 sm:h-60 sm:rounded-4xl  md:h-auto md:rounded-lg lg:rounded-sm md:w-auto ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
+								className={`w-45 h-45 rounded-full object-cover border-4  border-[#1d1a1a] sm:w-60 sm:h-60 sm:rounded-4xl lg:w-auto  lg:h-auto   lg:rounded-lg  ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
 								onLoad={() => setIsImageLoaded(true)}
 							/>
 						</div>
