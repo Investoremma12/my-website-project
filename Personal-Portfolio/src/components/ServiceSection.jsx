@@ -49,7 +49,9 @@ export function ServiceSection() {
 	return (
 		<>
 			<section>
-				<h1 className="text-3xl text-center lg:text-7xl bg-gold-gradient bg-clip-text text-transparent font-bold mt-20 mb-10">SERVICES</h1>
+				<h1 className="text-3xl text-center lg:text-7xl bg-gold-gradient bg-clip-text text-transparent font-bold mt-20 mb-10">
+					SERVICES
+				</h1>
 				{/* <hr className="w-100 border-solid border-4 border-white mb-10 ml-5" /> */}
 
 				<motion.div
@@ -57,23 +59,24 @@ export function ServiceSection() {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true, amount: 0.1 }}
-					className="h-[20%] w-full  bg-[#1d1a1a] rounded-xl text-[#cecbcb] pt-10 pb-10"
+					className="h-[20%] w-full  bg-[#1d1a1a] rounded-xl text-[#cecbcb] pt-10 pb-2"
+					
 				>
 					{services.map((item, index) => (
 						<motion.div key={index} variants={container}>
-							<h3 className="text-2xl mb-3 ml-5">
-								<span className="text-3xl text-white uppercase mb-1 block">
+							<h3 className="text-lg lg:text-2xl mb-3 ml-5">
+								<span className="text-xl font-bold lg:text-3xl text-white uppercase mb-1 block">
 									{item.title} {item.emoji}
 								</span>
 								{item.description}
 							</h3>
 
-							<ul className="list-square text-xl ml-10 mb-10">
+							<ul className="list-square text-lg lg:text-xl ml-10 mb-5">
 								<li>
-									<span className=" font-semibold">Result:</span> {item.result}
+									<span className="font-semibold">Result:</span> {item.result}
 								</li>
 								<li>
-									<span className=" font-semibold">The Goal:</span> {item.goal}
+									<span className="font-semibold">The Goal:</span> {item.goal}
 								</li>
 							</ul>
 
@@ -84,6 +87,8 @@ export function ServiceSection() {
 						</motion.div>
 					))}
 				</motion.div>
+
+				<GlowingLine />
 			</section>
 		</>
 	);

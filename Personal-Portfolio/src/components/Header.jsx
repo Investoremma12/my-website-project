@@ -78,7 +78,7 @@ export function Header() {
 								},
 							}}
 							transition={{ duration: 0.6, ease: 'easeIn' }}
-							className="bg-[#161616] w-full rounded-sm fixed text-white right-0 bottom-0 top-1 lg:hidden md:w-[50%]"
+							className="bg-[#161616] w-full rounded-sm z-100 fixed text-white right-0 bottom-0 top-1 lg:hidden md:w-[50%]"
 						>
 							<div className="space-y-5 mt-15 mb-20 ml-5">
 								{['HOME', 'SERVICES', 'ABOUT',  'PROJECTS'].map((item) => (

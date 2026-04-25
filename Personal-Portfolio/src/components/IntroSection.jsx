@@ -2,8 +2,6 @@ import workPic from '../assets/profile-pic.avif';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-
-
 // 1. Define GlowingLine OUTSIDE of the other function
 export function GlowingLine() {
 	return (
@@ -38,7 +36,7 @@ export function GlowingLine() {
 
 export function IntroSection() {
 	const [isImageLoaded, setIsImageLoaded] = useState(false);
-	
+
 	return (
 		<>
 			<motion.section

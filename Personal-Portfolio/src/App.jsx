@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { motion } from 'framer-motion';
 import { IntroSection } from './components/IntroSection';
 import { ServiceSection } from './components/ServiceSection';
+import { AboutSection } from './components/AboutSection';
 
 const generateParticles = () => {
 	return Array.from({ length: 10 }, () => {
@@ -69,24 +70,26 @@ export function BackgroundParticles() {
 	);
 }
 const SectionDivider = () => {
-  return (
-    <div className="relative w-full h-px flex justify-center items-center my-10">
-      {/* The main fading line */}
-      <div className="absolute w-full h-[1px] bg-[image:var(--bg-section-divider)]" />
-      
-      {/* A small central glow "dot" to signify the break */}
-      <div className="absolute w-24 h-8 bg-yellow-500/20 blur-xl rounded-full" />
-    </div>
-  );
+	return (
+		<div className="relative w-full h-px flex justify-center items-center my-10 lg:hidden">
+			{/* The main fading line */}
+			<div className="absolute w-full h-px bg-[image:var(--bg-section-divider)]" />
+
+			{/* A small central glow "dot" to signify the break */}
+			<div className="absolute w-24 h-8 bg-yellow-500/20 blur-xl rounded-full" />
+		</div>
+	);
 };
 function App() {
 	return (
-		<main >
+		<main>
 			<BackgroundParticles />
 			<Header />
 			<IntroSection />
-			<SectionDivider/>
+			<SectionDivider />
 			<ServiceSection />
+			<SectionDivider />
+			<AboutSection />
 		</main>
 	);
 }
