@@ -1,69 +1,89 @@
-import birdLogo from '../assets/flying-phoenix-color.png';
-import whiteMailIcon from '../assets/mail-white.svg';
-import { motion } from 'framer-motion';
-import { AnimatePresence } from 'framer-motion';
+import TechTroveSymbol from '../assets/techtrove.png';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
 export function Header() {
 	const [isOpen, setIsOpen] = useState(false);
+
 	return (
 		<>
-			<nav className="flex justify-between items-center mx-2 ">
-				<div className="flex items-center gap-1">
-					<img src={birdLogo} className="w-13 rounded-xl" />
-					<h4 className="text-lg">Emmanuel</h4>
-				</div>
-
-				<div className="hidden lg:flex gap-4 text-lg">
-					{['HOME', 'SERVICES', 'ABOUT', 'PROJECTS'].map((item) => (
-						<motion.p
-							key={item}
-							className="hover:bg-zinc-900 p-1 rounded-md cursor-pointer transition-colors"
-							whileHover={{ scale: 1.02 }}
-							transition={{ ease: 'easeIn' }}
-						>
-							{item}
-						</motion.p>
-					))}
-				</div>
-				<div className="hidden lg:block bg-gold-gradient border-none px-2 py-1 font-bold  rounded-lg cursor-pointer transition-colors shadow-gold text-lg">
-					contact Me
-				</div>
-
-				<button
-					className={`top-4 right-4 z-999 flex items-center cursor-pointer justify-center w-12 h-12 rounded-full transition-all duration-300 outline-none border-none lg:hidden
-        ${isOpen ? 'bg-black shadow-lg' : 'bg-transparent hover:bg-zinc-900'}`}
-					onClick={() => setIsOpen(!isOpen)}
-				>
-					<div className="relative w-6 h-6 flex items-center justify-center">
-						{/* Top Line */}
-						<motion.div
-							className="absolute w-full h-0.5 rounded-full" // Reduced from 3px to 2px
-							style={{
-								background:
-									'linear-gradient(45deg, #8b0000 0%, #ff4500 50%, #ffd700 100%)',
-								transformOrigin: 'center',
-							}}
-							animate={
-								isOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -2 } // Tight 2px gap (relative to center)
-							}
-							transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-						/>
-						{/* Bottom Line */}
-						<motion.div
-							className="absolute w-full h-0.5 rounded-full" // Reduced from 3px to 2px
-							style={{
-								background:
-									'linear-gradient(45deg, #8b0000 0%, #ff4500 50%, #ffd700 100%)',
-								transformOrigin: 'center',
-							}}
-							animate={
-								isOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 5 } // Tight 2px gap (relative to center)
-							}
-							transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-						/>
+			<nav className="w-full bg-black/30 backdrop-blur-xl border-b border-white/10 px-4 sm:px-6 lg:px-10 py-4">
+				<div className="flex justify-between items-center max-w-7xl mx-auto">
+					<div className="flex items-center gap-2">
+						<img src={TechTroveSymbol} className="w-11 h-11" />
+						<p className="text-white font-semibold tracking-wide">TECH TROVE</p>
 					</div>
-				</button>
+					<div className="hidden lg:flex gap-8 text-sm font-medium justify-center">
+						{['HOME', 'SERVICES', 'ABOUT', 'PROJECTS'].map((item) => (
+							<motion.div
+								key={item}
+								className="relative cursor-pointer text-gray-300 hover:text-white transition"
+								whileHover="hover"
+								initial="rest"
+								animate="rest"
+							>
+								<p>{item}</p>
+
+								<motion.span
+									variants={{
+										rest: { width: 0 },
+										hover: { width: '100%' },
+									}}
+									transition={{ duration: 0.3, ease: 'easeOut' }}
+									className="absolute left-0 -bottom-1 h-0.5 bg-gold-gradient"
+								/>
+							</motion.div>
+						))}
+					</div>
+
+					<div className="flex items-center justify-end gap-3">
+						
+						<div className="hidden lg:block">
+							<motion.button
+								whileHover={{ scale: 1.05 }}
+								whileTap={{ scale: 0.95 }}
+								className="relative px-4 py-2 rounded-lg font-semibold text-sm text-white overflow-hidden border border-[#b69573]/40"
+							>
+								<span className="absolute inset-0 bg-gold-gradient" />
+								<span className="relative z-10">Contact Me</span>
+							</motion.button>
+						</div>
+
+						<button
+							className={`top-4 right-4 z-999 flex items-center cursor-pointer justify-center w-12 h-12 rounded-full transition-all duration-300 outline-none border-none lg:hidden
+        ${isOpen ? 'bg-black shadow-lg' : 'bg-transparent hover:bg-zinc-900'}`}
+							onClick={() => setIsOpen(!isOpen)}
+						>
+							<div className="relative w-6 h-6 flex items-center justify-center">
+								<motion.div
+									className="absolute w-full h-0.5 rounded-full" 
+									style={{
+										background:
+											'linear-gradient(45deg, #8b0000 0%, #ff4500 50%, #ffd700 100%)',
+										transformOrigin: 'center',
+									}}
+									animate={
+										isOpen ? { rotate: 45, y: 0 } : { rotate: 0, y: -2 } 
+									}
+									transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+								/>
+								<motion.div
+									className="absolute w-full h-0.5 rounded-full"
+									style={{
+										background:
+											'linear-gradient(45deg, #8b0000 0%, #ff4500 50%, #ffd700 100%)',
+										transformOrigin: 'center',
+									}}
+									animate={
+										isOpen ? { rotate: -45, y: 0 } : { rotate: 0, y: 5 } 
+									}
+									transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+								/>
+							</div>
+						</button>
+					</div>
+				</div>
+
 				<AnimatePresence>
 					{isOpen && (
 						<motion.div
@@ -74,7 +94,7 @@ export function Header() {
 								x: 100,
 								transition: {
 									duration: 0.8,
-									delay: 0.2, // The "wait a little" part
+									delay: 0.2, 
 									ease: 'anticipate',
 								},
 							}}

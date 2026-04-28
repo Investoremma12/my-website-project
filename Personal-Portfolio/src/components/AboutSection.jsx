@@ -2,11 +2,12 @@ import aboutImage from '../assets/about-image.png';
 import reactLogo from '../assets/react-logo.svg';
 import tailwindLogo from '../assets/tailwind-logo.svg';
 import viteLogo from '../assets/vite-logo.svg';
+import { motion } from 'framer-motion';
 
 export function TechStack() {
 	const logos = [
 		{ name: 'React', url: reactLogo },
-		{ name: 'Vite', url: viteLogo }, // Now using the "Shield" SVG
+		{ name: 'Vite', url: viteLogo },
 		{ name: 'Tailwind', url: tailwindLogo },
 	];
 
@@ -14,7 +15,6 @@ export function TechStack() {
 		<div className="flex gap-10 items-center justify-center py-3">
 			{logos.map((logo) => (
 				<div key={logo.name} className="relative group">
-					{/* Optional: Tiny glow behind the icon on hover */}
 					<div className="absolute inset-0 bg-orange-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
 
 					<div
@@ -39,7 +39,7 @@ export function AboutSection() {
 				</h1>
 
 				<div
-					className="relative w-[95%] mx-auto rounded-xl text-[#cecbcb] overflow-hidden
+					className="relative w-[95%] mx-auto rounded-xl text-[#cecbcb]
 					bg-linear-to-br from-black via-[#0f0f0f] to-[#1a1a1a] px-5 py-10 lg:px-10 lg:py-16"
 				>
 					<div className="absolute -top-20 -right-20 w-60 h-60 bg-[#D9B46C] opacity-10 blur-3xl rounded-full"></div>
@@ -49,8 +49,13 @@ export function AboutSection() {
 						<div className="stars2"></div>
 					</div>
 
-                    
-					<div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+					<motion.div
+						className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16"
+						initial={{ opacity: 0, y: 50 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.8, ease: 'easeOut' }}
+						viewport={{ once: true }}
+					>
 						<div className="w-full lg:w-1/2 flex flex-col items-center">
 							<div className="relative p-0.5 rounded-xl bg-gold-gradient shadow-[0_0_30px_rgba(217,180,108,0.3)] w-fit">
 								<img
@@ -100,7 +105,7 @@ export function AboutSection() {
 								</div>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 				</div>
 			</section>
 		</>

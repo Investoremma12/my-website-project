@@ -40,12 +40,14 @@ export function IntroSection() {
 	return (
 		<>
 			<motion.section
-				// className="mx-12"
 				initial={{ opacity: 0, x: -100 }}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ duration: 0.8 }}
 			>
-				<div className="flex flex-col lg:flex-row mt-10 gap-3 mx-auto bg-[#1d1a1a] w-[95%] lg:w-[93%] p-5 rounded-sm">
+				<div
+					className="flex flex-col lg:flex-row mt-15 gap-3 mx-auto bg-linear-to-br from-black via-[#0f0f0f] to-[#1a1a1a]
+  					w-[95%] lg:w-[93%] p-5 rounded-sm"
+				>
 					<div className="lg:mt-7 order-2 lg:order-1">
 						<p className="text-[1.2rem] sm:text-[1.3rem] lg:text-[1.5rem] font-bold text-center lg:text-left">
 							Hi! i am
@@ -53,7 +55,7 @@ export function IntroSection() {
 								Emmanuel Onyibe
 							</span>
 						</p>
-						<p className="text-xl lg:text-2xl font-bold text-center lg:text-left">
+						<p className="text-xl lg:text-2xl font-bold text-center text-[#b69573] lg:text-left">
 							A web developer
 						</p>
 						<div className="mt-3 max-w-4xl">

@@ -40,56 +40,74 @@ const container = {
 	hidden: { opacity: 0 },
 	visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
 };
+
 const item = {
-	hidden: { opacity: 0, y: 20 },
+	hidden: { opacity: 0, y: 40 },
 	visible: { opacity: 1, y: 0 },
 };
 
 export function ServiceSection() {
 	return (
-		<>
-			<section>
-				<h1 className="text-3xl text-center lg:text-7xl bg-gold-gradient bg-clip-text text-transparent font-bold mt-20 mb-10">
-					SERVICES
-				</h1>
-				{/* <hr className="w-100 border-solid border-4 border-white mb-10 ml-5" /> */}
+		<section className="w-[95%] sm:w-[98%] mx-auto mt-24 sm:mt-32 text-white">
 
-				<motion.div
-					variants={container}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, amount: 0.1 }}
-					className="h-[20%] w-full  bg-[#1d1a1a] rounded-xl text-[#cecbcb] pt-10 pb-2"
-					
-				>
-					{services.map((item, index) => (
-						<motion.div key={index} variants={container}>
-							<h3 className="text-lg lg:text-2xl mb-3 ml-5">
-								<span className="text-xl font-bold lg:text-3xl text-white uppercase mb-1 block">
-									{item.title} {item.emoji}
-								</span>
-								{item.description}
+			<h1 className="text-3xl sm:text-5xl lg:text-7xl text-center 
+			bg-gold-gradient bg-clip-text text-transparent font-bold mb-16">
+				SERVICES
+			</h1>
+
+			<motion.div
+				variants={container}
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true, amount: 0.1 }}
+				className="flex flex-col gap-10"
+			>
+
+				{services.map((service, index) => (
+					<motion.div
+						key={index}
+						variants={item}
+						className="relative rounded-2xl overflow-hidden
+						bg-linear-to-br from-black via-[#0f0f0f] to-[#1a1a1a]
+						border border-white/10 p-6 sm:p-10 lg:p-14
+						transition duration-300 group"
+					>
+
+						<div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
+							<div className="absolute inset-0 rounded-2xl shadow-[0_0_60px_rgba(182,149,115,0.25)]" />
+							<div className="absolute inset-0 border border-[#b69573]/40 rounded-2xl" />
+						</div>
+
+						<div className="relative z-10 max-w-4xl">
+
+							<h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4">
+								{service.title} {service.emoji}
 							</h3>
 
-							<ul className="list-square text-lg lg:text-xl ml-10 mb-5">
-								<li>
-									<span className="font-semibold">Result:</span> {item.result}
-								</li>
-								<li>
-									<span className="font-semibold">The Goal:</span> {item.goal}
-								</li>
-							</ul>
+							<p className="text-sm sm:text-base lg:text-lg text-gray-300 mb-6 leading-relaxed">
+								{service.description}
+							</p>
 
-							{/* Only show the HR if it's NOT the last item in the list */}
-							{index !== services.length - 1 && (
-								<hr className="my-15 border-gray-500 mx-5" />
-							)}
-						</motion.div>
-					))}
-				</motion.div>
+							<div className="space-y-2 text-sm sm:text-base lg:text-lg">
+								<p>
+									<span className="text-[#b69573] font-semibold">Result:</span>{' '}
+									{service.result}
+								</p>
+								<p>
+									<span className="text-[#b69573] font-semibold">Goal:</span>{' '}
+									{service.goal}
+								</p>
+							</div>
 
+						</div>
+					</motion.div>
+				))}
+
+			</motion.div>
+
+			<div className="mt-16">
 				<GlowingLine />
-			</section>
-		</>
+			</div>
+		</section>
 	);
 }

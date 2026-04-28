@@ -1,9 +1,10 @@
-import './App.css';
 import { Header } from './components/Header';
 import { motion } from 'framer-motion';
 import { IntroSection } from './components/IntroSection';
 import { ServiceSection } from './components/ServiceSection';
 import { AboutSection } from './components/AboutSection';
+import { ContactSection } from './components/ContactSection';
+import { ProjectSection } from './components/ProjectSection';
 
 const generateParticles = () => {
 	return Array.from({ length: 10 }, () => {
@@ -90,6 +91,9 @@ function App() {
 			<ServiceSection />
 			<SectionDivider />
 			<AboutSection />
+			<SectionDivider />
+			<ProjectSection />
+			<ContactSection />
 		</main>
 	);
 }
