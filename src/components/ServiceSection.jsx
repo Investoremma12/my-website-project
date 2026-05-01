@@ -48,7 +48,7 @@ const item = {
 
 export function ServiceSection() {
 	return (
-		<section className="w-[95%] sm:w-[98%] mx-auto mt-24 sm:mt-32 text-white">
+		<section className="w-[95%] sm:w-[98%] mx-auto mt-24 sm:mt-32 text-white" id="services">
 
 			<h1 className="text-3xl sm:text-5xl lg:text-7xl text-center 
 			bg-gold-gradient bg-clip-text text-transparent font-bold mb-16">

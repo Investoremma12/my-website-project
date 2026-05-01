@@ -1,10 +1,12 @@
 import { Header } from './components/Header';
 import { motion } from 'framer-motion';
+import { Routes, Route } from 'react-router';
 import { IntroSection } from './components/IntroSection';
 import { ServiceSection } from './components/ServiceSection';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { ProjectSection } from './components/ProjectSection';
+import { ScrollToTop } from './components/ScrollToTop';
 
 const generateParticles = () => {
 	return Array.from({ length: 10 }, () => {
@@ -86,14 +88,15 @@ function App() {
 		<main>
 			<BackgroundParticles />
 			<Header />
-			<IntroSection />
+			<IntroSection id="intro" />
 			<SectionDivider />
-			<ServiceSection />
+			<ServiceSection id="services" />
 			<SectionDivider />
-			<AboutSection />
+			<AboutSection id="about" />
 			<SectionDivider />
-			<ProjectSection />
-			<ContactSection />
+			<ProjectSection id="projects" />
+			<ContactSection id="contact" />
+			<ScrollToTop />
 		</main>
 	);
 }

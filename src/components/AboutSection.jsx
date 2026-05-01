@@ -33,7 +33,7 @@ export function TechStack() {
 export function AboutSection() {
 	return (
 		<>
-			<section>
+			<section id="about">
 				<h1 className="text-3xl text-center lg:text-7xl bg-gold-gradient bg-clip-text text-transparent font-bold mt-16 lg:mt-20 mb-8 lg:mb-10">
 					ABOUT ME
 				</h1>
@@ -41,6 +41,7 @@ export function AboutSection() {
 				<div
 					className="relative w-[95%] mx-auto rounded-xl text-[#cecbcb]
 					bg-linear-to-br from-black via-[#0f0f0f] to-[#1a1a1a] px-5 py-10 lg:px-10 lg:py-16"
+					
 				>
 					<div className="absolute -top-20 -right-20 w-60 h-60 bg-[#D9B46C] opacity-10 blur-3xl rounded-full"></div>
 

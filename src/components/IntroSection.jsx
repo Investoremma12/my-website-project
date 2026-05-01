@@ -43,6 +43,7 @@ export function IntroSection() {
 				initial={{ opacity: 0, x: -100 }}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ duration: 0.8 }}
+				id="intro"
 			>
 				<div
 					className="flex flex-col lg:flex-row mt-15 gap-3 mx-auto bg-linear-to-br from-black via-[#0f0f0f] to-[#1a1a1a]
