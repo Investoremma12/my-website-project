@@ -1,9 +1,24 @@
 import TechTroveSymbol from '../assets/techtrove.png';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export function Header() {
 	const [isOpen, setIsOpen] = useState(false);
+	useEffect(() => {
+		if (isOpen) {
+			document.body.style.overflow = 'hidden';
+			document.documentElement.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+			document.documentElement.style.overflow = '';
+		}
+
+		return () => {
+			document.body.style.overflow = '';
+			document.documentElement.style.overflow = '';
+		};
+	}, [isOpen]);
+
 	const navLinks = [
 		{ name: 'HOME', href: '#intro' },
 		{ name: 'SERVICES', href: '#services' },
@@ -86,41 +101,73 @@ export function Header() {
 						</button>
 					</div>
 				</div>
-
 				<AnimatePresence>
 					{isOpen && (
-						<motion.div
-							initial={{ opacity: 0, x: 200 }}
-							animate={{ opacity: 1, x: 0 }}
-							exit={{
-								opacity: 0,
-								x: 100,
-								transition: {
-									duration: 0.8,
-									delay: 0.2,
-									ease: 'anticipate',
-								},
-							}}
-							transition={{ duration: 0.6, ease: 'easeIn' }}
-							className="fixed inset-0 w-full md:w-[50%] ml-auto
-							bg-[#161616] text-white z-100 lg:hidden"
-						>
-							<div className="space-y-5 mt-15 mb-20 ml-5">
-								{navLinks.map((item) => (
-									<a href={item.href} key={item.name}>
-										<p className="cursor-pointer text-[40px] font-black text-[#cecbcb] hover:text-white active:text-white transition-colors w-fit">
-											{item.name}
-										</p>
-									</a>
-								))}
-							</div>
+						<>
+							<motion.div
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1 }}
+								exit={{ opacity: 0 }}
+								onClick={() => setIsOpen(false)}
+								className="fixed inset-0  bg-black/80 backdrop-blur-md z-40"
+							/>
 
-							<a href="#contact">
-								<div className="bg-gold-gradient ml-8  border-none px-3 py-1 font-bold w-fit rounded-lg cursor-pointer  shadow-gold text-lg ">
-									contact Me
+							<motion.div
+								initial={{ x: '100%' }}
+								animate={{ x: 0 }}
+								exit={{ x: '100%' }}
+								transition={{ type: 'spring', stiffness: 100, damping: 18 }}
+								className="fixed top-0 right-0 h-screen w-full md:w-[50%] lg:hidden
+				bg-linear-to-br from-[#0a0a0a] via-[#111] to-[#1a1a1a]
+				text-white z-50 flex flex-col justify-between px-8 py-10 border-l border-white/10"
+							>
+								<div>
+									<p className="text-xs tracking-widest text-[#b69573] mb-6">
+									</p>
+
+									<div className="space-y-8">
+										{navLinks.map((item, index) => (
+											<motion.a
+												key={item.name}
+												href={item.href}
+												onClick={() => setIsOpen(false)}
+												initial={{ opacity: 0, x: 60 }}
+												animate={{ opacity: 1, x: 0 }}
+												transition={{ delay: index * 0.1 }}
+												className="group relative block text-3xl sm:text-4xl font-bold text-gray-400 hover:text-white transition"
+											>
+												{item.name}
+
+												<span className="absolute left-0 -bottom-2 h-0.5 w-0 bg-linear-to-r from-[#ffd700] to-[#ff4500] transition-all duration-300 group-hover:w-full" />
+											</motion.a>
+										))}
+									</div>
 								</div>
-							</a>
-						</motion.div>
+
+								<div className="space-y-6">
+									<a href="#contact" onClick={() => setIsOpen(false)}>
+										<motion.button
+											whileHover={{ scale: 1.04 }}
+											whileTap={{ scale: 0.96 }}
+											className="relative w-full py-3 rounded-lg font-semibold text-sm overflow-hidden border border-[#b69573]/30"
+										>
+											<span className="absolute inset-0 bg-linear-to-r from-[#8b0000] via-[#ff4500] to-[#ffd700] opacity-80" />
+
+											<span className="relative z-10 text-black">
+												Start a Project →
+											</span>
+										</motion.button>
+									</a>
+
+									<div className="text-center text-xs text-gray-500">
+										<p>Available for freelance</p>
+										<p className="mt-1">Response within 24 hours</p>
+									</div>
+								</div>
+
+								<div className="pointer-events-none absolute bottom-0 right-0 w-40 h-40 bg-orange-500/20 blur-3xl" />
+							</motion.div>
+						</>
 					)}
 				</AnimatePresence>
 			</nav>
