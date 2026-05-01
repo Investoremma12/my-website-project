@@ -116,7 +116,7 @@ export function Header() {
 							</div>
 
 							<a href="#contact">
-								<div className="bg-gold-gradient mx-auto  border-none px-3 py-1 font-bold w-fit rounded-lg cursor-pointer  shadow-gold text-lg ">
+								<div className="bg-gold-gradient ml-8  border-none px-3 py-1 font-bold w-fit rounded-lg cursor-pointer  shadow-gold text-lg ">
 									contact Me
 								</div>
 							</a>

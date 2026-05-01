@@ -85,7 +85,7 @@ const SectionDivider = () => {
 };
 function App() {
 	return (
-		<main>
+		<main className="overflow-x-hidden">
 			<BackgroundParticles />
 			<Header />
 			<IntroSection id="intro" />

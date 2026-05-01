@@ -121,3 +121,7 @@
 .wave-svg {
 	animation: wave-move 4s linear infinite;
 }
+html,
+body {
+	overflow-x: hidden;
+}
