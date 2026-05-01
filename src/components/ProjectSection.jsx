@@ -27,6 +27,7 @@ export function ProjectSection() {
 			webNarrative: `A modern high-performance web application built withcutting-edge technologies.`,
 			image: `${PersonalWebsitePic}`,
 			techs: ['REACT', 'TAILWIND', 'FRAMER-MOTION'],
+			link: 'https://techtrove-nine.vercel.app/',
 		},
 
 		{
@@ -34,6 +35,7 @@ export function ProjectSection() {
 			webNarrative: `A modern online marketplace built for speed, reliability, and effortless shopping from discovery to checkout.`,
 			image: `${EcommerceProject}`,
 			techs: ['REACT', 'TYPESCRIPT', 'NODE.JS'],
+			link: 'https://ecommerce-project-five-lilac.vercel.app/',
 		},
 		{
 			projectTitle: 'Executive Digital Showcase',
