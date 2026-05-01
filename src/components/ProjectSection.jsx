@@ -40,6 +40,7 @@ export function ProjectSection() {
 			webNarrative: `A custom personal website built for a client, designed to present their work, identity, and services with clarity and style.`,
 			image: `${newWebsite}`,
 			techs: ['REACTSCROLLS', 'TAILWIND', 'NEXT.JS'],
+			link: 'https://abrahamalizor.vercel.app/',
 		},
 	];
 
@@ -113,12 +114,14 @@ export function ProjectSection() {
 								))}
 							</div>
 
-							<motion.button
-								whileHover={{ x: 5 }}
-								className="text-[#b69573] text-sm flex items-center gap-2"
-							>
-								View Project →
-							</motion.button>
+							<a href={items.link} target="_blank">
+								<motion.button
+									whileHover={{ x: 5 }}
+									className="text-[#b69573] text-sm flex cursor-pointer items-center gap-2"
+								>
+									View Project →
+								</motion.button>
+							</a>
 						</div>
 
 						<div
