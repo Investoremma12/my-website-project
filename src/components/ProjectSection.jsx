@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import PersonalWebsitePic from '../assets/personal-website.png';
 import EcommerceProject from '../assets/ecommerce-project.png';
-import newWebsite from '../assets/abraham-profile.png';
+import newWebsite from '../assets/ocee-web-pic.png';
 const container = {
 	hidden: {},
 	show: {
@@ -41,8 +41,8 @@ export function ProjectSection() {
 			projectTitle: 'Executive Digital Showcase',
 			webNarrative: `A custom personal website built for a client, designed to present their work, identity, and services with clarity and style.`,
 			image: `${newWebsite}`,
-			techs: ['REACTSCROLLS', 'TAILWIND', 'NEXT.JS'],
-			link: 'https://abrahamalizor.vercel.app/',
+			techs: ['REACT', 'TAILWIND', 'TYPESCRIPT'],
+			link: 'https://ocee-stores.vercel.app/',
 		},
 	];
 
